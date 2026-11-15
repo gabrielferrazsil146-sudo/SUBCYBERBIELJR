@@ -1,0 +1,6 @@
+{
+  "name": "Cyber Surfers",
+  "description": "Corredor infinito 3D em 3 trilhas no estilo Subway Surfers onde sobreviver sem tocar em moedas nem armadilhas define seu recorde.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

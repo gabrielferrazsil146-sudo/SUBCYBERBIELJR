@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #080b10;
+    color: #f1f5f9;
+    touch-action: manipulation;
+  }
+}
+
+.font-display {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.font-mono-tabular {
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle dark scrollbar for panels */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 3px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+@keyframes verifiedShimmer {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+  }
+  55%,
+  100% {
+    transform: translateX(240%) skewX(-20deg);
+  }
+}
+
+.verified-shimmer-badge {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 14px rgba(56, 189, 248, 0.35),
+    0 0 4px rgba(250, 204, 21, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.verified-shimmer-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.42) 50%,
+    transparent 100%
+  );
+  animation: verifiedShimmer 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.verified-icon-glow {
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.85))
+    drop-shadow(0 0 10px rgba(250, 204, 21, 0.55));
+}
+
